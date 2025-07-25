@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Add Car Part{% endblock %}
+
+{% block content %}
+<h2 class="text-info mb-4">Add a New Car Part</h2>
+
+<form action="{{ url_for('add_item') }}" method="POST" class="row g-3">
+  <div class="col-md-6">
+    <label for="name" class="form-label">Part Name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+
+  <div class="col-md-6">
+    <label for="material" class="form-label">Material</label>
+    <input type="text" class="form-control" id="material" name="material" required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="quantity" class="form-label">Quantity</label>
+    <input type="number" class="form-control" id="quantity" name="quantity" required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="sales_price" class="form-label">Sales Price (₦)</label>
+    <input type="text" class="form-control" id="sales_price" name="sales_price" required>
+  </div>
+
+  <div class="col-md-4">
+    <label for="purchase_price" class="form-label">Purchase Price (₦)</label>
+    <input type="text" class="form-control" id="purchase_price" name="purchase_price" required>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-info">Add Part</button>
+  </div>
+</form>
+{% endblock %}
